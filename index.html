@@ -1098,7 +1098,7 @@
       const res = await fetch(SAVE_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ html, owner: GITHUB_OWNER, repo: GITHUB_REPO, branch: GITHUB_BRANCH })
+        body: JSON.stringify({ html, owner: GITHUB_OWNER, repo: GITHUB_REPO, branch: GITHUB_BRANCH, password: editPass })
       });
       if (res.ok) {
         alert('Mentve! Az oldal 1-2 percen belül frissül.');

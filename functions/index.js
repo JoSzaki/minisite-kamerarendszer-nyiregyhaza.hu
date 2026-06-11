@@ -2,10 +2,11 @@ const { onRequest } = require('firebase-functions/v2/https');
 const { defineSecret } = require('firebase-functions/params');
 
 const GITHUB_TOKEN  = defineSecret('GITHUB_TOKEN');
-const ALLOWED_OWNER = 'JoSzaki'; // csak ebből a GitHub org-ból fogad el push-t
+const EDITOR_PASS   = defineSecret('EDITOR_PASS');
+const ALLOWED_OWNER = 'JoSzaki';
 
 exports.saveMinisite = onRequest(
-  { secrets: [GITHUB_TOKEN], cors: true, region: 'europe-west3', invoker: 'public' },
+  { secrets: [GITHUB_TOKEN, EDITOR_PASS], cors: true, region: 'europe-west3', invoker: 'public' },
   async (req, res) => {
     if (req.method === 'OPTIONS') {
       res.set('Access-Control-Allow-Origin', '*');
@@ -20,7 +21,14 @@ exports.saveMinisite = onRequest(
       return;
     }
 
-    const { html, winner_id, owner, repo, branch = 'master' } = req.body;
+    const { html, winner_id, owner, repo, branch = 'master', password } = req.body;
+
+    const expectedPass = EDITOR_PASS.value();
+    if (!password || password !== expectedPass) {
+      console.warn('Érvénytelen jelszó — IP:', req.ip);
+      res.status(401).json({ error: 'Érvénytelen jelszó' });
+      return;
+    }
 
     if (!html)  { res.status(400).json({ error: 'html mező kötelező' });  return; }
     if (!owner) { res.status(400).json({ error: 'owner mező kötelező' }); return; }
