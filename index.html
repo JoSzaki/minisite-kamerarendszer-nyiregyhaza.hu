@@ -1100,9 +1100,14 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ html, owner: GITHUB_OWNER, repo: GITHUB_REPO, branch: GITHUB_BRANCH })
       });
-      if (res.ok) alert('Mentve! Az oldal 1-2 percen belül frissül.');
-      else alert('Hiba: érvénytelen jelszó vagy szerverhiba.');
-    } catch(e) { alert('Kapcsolódási hiba.'); }
+      if (res.ok) {
+        alert('Mentve! Az oldal 1-2 percen belül frissül.');
+      } else {
+        let detail = '';
+        try { detail = await res.text(); } catch(_) {}
+        alert('Mentési hiba (HTTP ' + res.status + '):\n' + (detail.slice(0, 300) || '(üres válasz)'));
+      }
+    } catch(e) { alert('Kapcsolódási hiba: ' + e.message); }
     editPass = null;
   }
 
