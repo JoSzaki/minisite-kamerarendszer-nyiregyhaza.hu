@@ -408,7 +408,7 @@
       <div class="sec-overline"><span>Kérdések &amp; Válaszok</span></div>
       <h2 class="sec-title">Miért válassza <em><span class="dyn-name" data-locked>szakértőnk</span></em> szolgáltatásait<br>kamerarendszer telepítéséhez Nyíregyházán?</h2>
     </div>
-    <div class="expert-faq reveal" data-locked>
+    <div class="expert-faq reveal" data-editable>
       <div class="efaq-nav" role="tablist">
         <button class="efaq-tab active" data-etab="0">Háttér</button>
         <button class="efaq-tab" data-etab="1">Helyszín</button>
@@ -1098,7 +1098,7 @@
       const res = await fetch(SAVE_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: editPass, content: html })
+        body: JSON.stringify({ html, owner: GITHUB_OWNER, repo: GITHUB_REPO, branch: GITHUB_BRANCH })
       });
       if (res.ok) alert('Mentve! Az oldal 1-2 percen belül frissül.');
       else alert('Hiba: érvénytelen jelszó vagy szerverhiba.');
