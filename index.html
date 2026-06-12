@@ -10,8 +10,8 @@
   var SITE = {
     domain:            'kamerarendszer-nyiregyhaza.hu',
     nev:               'A-team generál Kft',
-    telefon:           '+36303782827',
-    telefonMegjelenit: '+36303782827',
+    telefon:           '+36204334809',
+    telefonMegjelenit: '+36204334809',
     varos:             'Nyíregyháza',
     kerulet:           'Szabolcs-Szatmár-Bereg megye',
     szakmaJelzo:       'Kamerarendszer szakértő',
@@ -338,7 +338,7 @@
         <li><a href="#referenciak">Referenciák</a></li>
         <li><a href="#gyik">GYIK</a></li>
         <li><a href="#kapcsolat">Kapcsolat</a></li>
-        <li><a href="tel:+36303782827" class="nav-cta dyn-phone"></a></li>
+        <li><a href="tel:+36204334809" class="nav-cta dyn-phone"></a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menü">
         <span></span><span></span><span></span>
@@ -359,7 +359,7 @@
       <h1>Kamerarendszer<br>telepítés <em>Nyíregyházán</em></h1>
       <p class="hero-desc">Védje otthonát, vállalkozását és társasházát Szabolcs-Szatmár-Bereg megye tapasztalt kamerarendszer telepítő csapatával. Ingyenes helyszíni felmérés, 2 év garancia, Hikvision és Dahua minőség.</p>
       <div class="hero-actions">
-        <a href="tel:+36303782827" class="btn btn-gold">📞 <span class="dyn-phone"></span></a>
+        <a href="tel:+36204334809" class="btn btn-gold">📞 <span class="dyn-phone"></span></a>
         <a href="#kapcsolat" class="btn btn-ghost">Ingyenes felmérés</a>
       </div>
       <div class="hero-stats">
@@ -379,13 +379,13 @@
         <div class="cred-role">Kamerarendszer szakértő · Nyíregyháza</div>
         <div class="cred-sep"></div>
         <div class="cred-phone-label">Telefonszám</div>
-        <a href="tel:+36303782827" class="cred-phone-num dyn-phone"></a>
+        <a href="tel:+36204334809" class="cred-phone-num dyn-phone"></a>
       </div>
 
       <!-- Kontakt nézet — ?id= nélkül -->
       <div class="cred-form" id="credForm">
         <h3>📞 Hívjon fel most!</h3>
-        <a href="tel:+36303782827" class="hero-contact-phone dyn-phone" style="font-family:var(--ff-display);font-size:1.6rem;color:var(--warm);display:block;margin-bottom:16px"></a>
+        <a href="tel:+36204334809" class="hero-contact-phone dyn-phone" style="font-family:var(--ff-display);font-size:1.6rem;color:var(--warm);display:block;margin-bottom:16px"></a>
         <p style="font-size:.82rem;color:rgba(255,255,255,.4)">Visszahívás 2 munkanapon belül.</p>
       </div>
     </div>
@@ -799,7 +799,7 @@
     <p>48 órán belül kiszállunk, ajánlat azonnal. Nincs rejtett díj, nincs kötelezettség.</p>
     <div class="cta-actions">
       <a href="#kapcsolat" class="btn btn-outline">Ajánlatot kérek</a>
-      <a href="tel:+36303782827" class="btn btn-outline">📞 <span class="dyn-phone"></span></a>
+      <a href="tel:+36204334809" class="btn btn-outline">📞 <span class="dyn-phone"></span></a>
     </div>
   </div>
 </div>
@@ -829,7 +829,7 @@
       <h2 class="sec-title">Hívjon fel vagy írjon —<br><em>visszahívunk!</em></h2>
     </div>
     <div class="contact-cards reveal">
-      <a href="tel:+36303782827" class="contact-card contact-card-primary">
+      <a href="tel:+36204334809" class="contact-card contact-card-primary">
         <div class="cc-icon">📞</div>
         <div class="cc-label">Telefon</div>
         <div class="cc-value dyn-phone"></div>
@@ -888,13 +888,13 @@
     <div class="footer-col">
       <h4>Elérhetőség</h4>
       <div class="footer-contact-item">📍 <span>4400 Nyíregyháza, Kossuth tér 4.</span></div>
-      <div class="footer-contact-item">📞 <a href="tel:+36303782827" class="dyn-phone"></a></div>
+      <div class="footer-contact-item">📞 <a href="tel:+36204334809" class="dyn-phone"></a></div>
       <div class="footer-contact-item">✉️ <a href="mailto:info@kamerarendszer-nyiregyhaza.hu">info@kamerarendszer-nyiregyhaza.hu</a></div>
       <div class="footer-contact-item">🕐 <span>H–P: 8–18 | Szo: 9–14</span></div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© <span id="footerYear"></span> <span class="dyn-name">KameraRendszer Nyíregyháza</span> · <a href="tel:+36303782827" class="dyn-phone"></a></span>
+    <span>© <span id="footerYear"></span> <span class="dyn-name">KameraRendszer Nyíregyháza</span> · <a href="tel:+36204334809" class="dyn-phone"></a></span>
     <span><a href="/gdpr-adatvedelem/">Adatvédelmi tájékoztató</a> · <a href="https://joszaki.hu" data-locked target="_blank" rel="noopener">joszaki.hu</a> · <span onclick="initEditMode()" style="cursor:pointer;user-select:none">Belépés</span></span>
   </div>
 </footer>
@@ -934,18 +934,11 @@
         f = (await res.json()).fields || {};
       } else {
         const res = await fetch(
-          'https://firestore.googleapis.com/v1/projects/joszaki-minisite/databases/(default)/documents/joszaki_kamera_nyiregyhaza?pageSize=20&key=AIzaSyDfdCNl3LeuBT4xIYQPYluSVKKMFJTGVws'
+          'https://firestore.googleapis.com/v1/projects/joszaki-minisite/databases/(default)/documents/joszaki_kamera_nyiregyhaza/baranek-andras?key=AIzaSyDfdCNl3LeuBT4xIYQPYluSVKKMFJTGVws'
         );
         if (!res.ok) return;
-        const data = await res.json();
-        const docs = data.documents || [];
-        const doc  = docs.find(d => {
-          const foto = d.fields?.foto?.stringValue || '';
-          return foto && !foto.includes('default-avatar');
-        }) || docs[0];
-        if (!doc) return;
-        id = doc.name.split('/').pop();
-        f  = doc.fields || {};
+        f  = (await res.json()).fields || {};
+        id = 'baranek-andras';
       }
 
       const name  = f.name?.stringValue;
